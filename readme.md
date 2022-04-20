@@ -97,6 +97,9 @@ func (g Greeter) SayHello(context context.Context, request *helloworld.HelloRequ
 	}, nil
 }
 ```
+## 5.3 数据展示
+![img](https://cdn.gocn.vip/ego/assets/img/ego_command_show.b7061178.png)
+![img](https://cdn.gocn.vip/ego/assets/img/etcd_show.5a824101.png)
 
 
 
@@ -168,6 +171,9 @@ func callGrpc() error {
 	return nil
 }
 ```
+
+## 6.3 数据展示
+![img](https://cdn.gocn.vip/ego/assets/img/ego_grpc.1c927cba.png)
 
 # 查看全部租期
 etcdctl lease list
