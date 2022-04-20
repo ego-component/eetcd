@@ -1,0 +1,40 @@
+2020-12-23 17:45:26	[32mINFO[0m	init default logger             	{"comp": "core.elog"}
+2020-12-23 17:45:26	[32mINFO[0m	init ego logger                 	{"comp": "core.elog"}
+2020-12-23 17:45:26	[32mINFO[0m	init config                     	{"comp": "core.econf", "addr": "config.toml"}
+2020-12-23 17:45:26	[32mINFO[0m	init max procs                  	{"comp": "app", "value": 8}
+2020-12-23 17:45:26	[32mINFO[0m	start grpc client               	{"comp": "client.egrpc", "compName": "grpc.test", "addr": "127.0.0.1:9002", "name": "grpc.test"}
+2020-12-23 17:45:26	[31mERROR[0m	access                          	{"comp": "client.egrpc", "compName": "grpc.test", "addr": "127.0.0.1:9002", "type": "unary", "code": 14, "desc": "error", "method": "/helloworld.Greeter/SayHello", "cost": 0.42, "name": "127.0.0.1:9002", "event": "error"}
+2022-04-20 12:06:53	[32mINFO[0m	ego@v1.0.1/ego_function.go:175	init config                     	{"comp": "core.econf", "addr": "config.toml"}
+2022-04-20 12:06:53	[32mINFO[0m	file/file.go:89	read watch                      	{"comp": "core.econf", "comp": "file datasource", "configFile": "/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/config.toml", "realConfigFile": "/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/config.toml", "fppath": "/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/config.toml"}
+2022-04-20 12:06:53	[32mINFO[0m	ego@v1.0.1/ego_function.go:239	init app                        	{"comp": "app", "pid": 82894, "coreNum": 8}
+2022-04-20 12:06:53	[32mINFO[0m	ego@v1.0.1/ego_function.go:217	init trace                      	{"comp": "app"}
+2022-04-20 12:06:53	[32mINFO[0m	eetcd/component.go:111	dial etcd server                	{"comp": "component.eetcd", "compName": "etcd", "addr": "[127.0.0.1:2379]"}
+2022-04-20 12:06:56	[31mPANIC[0m	egrpc/component.go:77	dial grpc server                	{"comp": "client.egrpc", "compName": "grpc.test", "addr": "etcd:///main", "errKind": "request err", "error": "context deadline exceeded", "key": "grpc.test", "addr": "etcd:///main", "cost": 3000.631}
+github.com/gotomicro/ego/client/egrpc.newComponent
+	/Users/askuy/go/pkg/mod/github.com/gotomicro/ego@v1.0.1/client/egrpc/component.go:77
+github.com/gotomicro/ego/client/egrpc.(*Container).Build
+	/Users/askuy/go/pkg/mod/github.com/gotomicro/ego@v1.0.1/client/egrpc/container.go:81
+main.invokerGrpc
+	/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/main.go:29
+github.com/gotomicro/ego.runSerialFuncReturnError
+	/Users/askuy/go/pkg/mod/github.com/gotomicro/ego@v1.0.1/ego_function.go:263
+github.com/gotomicro/ego.(*Ego).Invoker
+	/Users/askuy/go/pkg/mod/github.com/gotomicro/ego@v1.0.1/ego.go:133
+main.main
+	/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/main.go:16
+runtime.main
+	/usr/local/go/src/runtime/proc.go:250
+2022-04-20 12:07:24	[32mINFO[0m	ego@v1.0.1/ego_function.go:175	init config                     	{"comp": "core.econf", "addr": "config.toml"}
+2022-04-20 12:07:24	[32mINFO[0m	file/file.go:89	read watch                      	{"comp": "core.econf", "comp": "file datasource", "configFile": "/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/config.toml", "realConfigFile": "/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/config.toml", "fppath": "/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/config.toml"}
+2022-04-20 12:07:24	[32mINFO[0m	ego@v1.0.1/ego_function.go:239	init app                        	{"comp": "app", "pid": 83062, "coreNum": 8}
+2022-04-20 12:07:24	[32mINFO[0m	ego@v1.0.1/ego_function.go:217	init trace                      	{"comp": "app"}
+2022-04-20 12:07:24	[32mINFO[0m	eetcd/component.go:111	dial etcd server                	{"comp": "component.eetcd", "compName": "etcd", "addr": "[127.0.0.1:2379]"}
+2022-04-20 12:07:24	[32mINFO[0m	egrpc/component.go:83	start grpc client               	{"comp": "client.egrpc", "compName": "grpc.test", "addr": "etcd:///hello", "name": "grpc.test", "cost": 2.368}
+2022-04-20 12:07:24	[31mERROR[0m	egrpc/interceptor.go:189	access                          	{"comp": "client.egrpc", "compName": "grpc.test", "addr": "etcd:///hello", "type": "unary", "code": 14, "ucode": 503, "desc": "error", "method": "/helloworld.Greeter/SayHello", "cost": 2.124, "name": "etcd:///hello", "tid": "3ec11a433f51a5e7cc6107747fffead2", "event": "error", "error": "rpc error: code = Unavailable desc = error"}
+2022-04-20 12:38:36	[32mINFO[0m	file/file.go:89	read watch                      	{"comp": "core.econf", "comp": "file datasource", "configFile": "/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/config.toml", "realConfigFile": "/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/config.toml", "fppath": "/Users/askuy/code/github/gotomicro/ego-component/eetcd/examples/client/config.toml"}
+2022-04-20 12:38:36	[32mINFO[0m	ego@v1.0.2-0.20220420043749-f356839e8799/ego_function.go:175	init config                     	{"comp": "core.econf", "addr": "config.toml"}
+2022-04-20 12:38:36	[32mINFO[0m	ego@v1.0.2-0.20220420043749-f356839e8799/ego_function.go:239	init app                        	{"comp": "app", "pid": 86021, "coreNum": 8}
+2022-04-20 12:38:36	[32mINFO[0m	ego@v1.0.2-0.20220420043749-f356839e8799/ego_function.go:217	init trace                      	{"comp": "app"}
+2022-04-20 12:38:36	[32mINFO[0m	eetcd/component.go:111	dial etcd server                	{"comp": "component.eetcd", "compName": "etcd", "addr": "[127.0.0.1:2379]"}
+2022-04-20 12:38:36	[32mINFO[0m	egrpc/component.go:83	start grpc client               	{"comp": "client.egrpc", "compName": "grpc.test", "addr": "etcd:///hello", "name": "grpc.test", "cost": 3.245}
+2022-04-20 12:38:36	[31mERROR[0m	egrpc/interceptor.go:189	access                          	{"comp": "client.egrpc", "compName": "grpc.test", "addr": "etcd:///hello", "type": "unary", "code": 14, "ucode": 503, "desc": "error", "method": "/helloworld.Greeter/SayHello", "cost": 0.486, "name": "etcd:///hello", "tid": "f842bc3f0022decb2c7dcd1a960a48cd", "event": "error", "error": "rpc error: code = Unavailable desc = error"}
